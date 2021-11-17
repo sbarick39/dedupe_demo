@@ -1,0 +1,58 @@
+<app-loading-spinner *ngIf="loder.isLoading|async" ></app-loading-spinner>
+<div class="container">
+  <div>
+    <button routerLink="/deduperecords" class="btn btn-sm btn-primary">Back</button>
+    <span class="text text-success message"><b>{{message}}</b></span>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <th></th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>CIF</th>
+        <th>Category Code</th>
+        <th>Branch</th>
+        <th>Date of Birth</th>
+        <th>More Info</th>
+        <!-- <th>adhar/voter</th> -->
+        <th>Decision</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customerdata[0]?.dedup ;let i=index">
+          <td><form #userForm="ngForm"><input type="radio" name="radio" (click)="btndisabled()"></form></td>
+          <td>{{customer.firstName}}</td>
+          <td>{{customer.lastName}}</td>
+          <td>{{customer.cif}}</td>
+          <td>{{customer.categoryCode}}</td>
+          <td>{{customer.defaultBranch}}</td>
+          <td>{{customer.dateofBirth | date}}</td>
+          <td (click)="showMore(customer)" class="text text-primary">
+            <!-- <ng-container *ngFor="let detail of details; let i = index">
+                <ng-container *ngFor="let documents of detail.documents; let j = index">
+                  <tr>
+                      <td>{{documents. custDocTitle}}</td>
+                  </tr>
+                </ng-container>
+              </ng-container> -->
+         <!-- {{getCustomerDetails(customer)}} -->
+         Show More
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="showDuplicate(customer)"[disabled]="click" >Duplicate</button>
+          <button class="btn btn-primary ml-2" (click)="notDuplicate(customer)" [disabled]="click" >Not Duplicate</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="lastbtn">
+  </div>
+  <div>
+    <table>
+      <tr *ngFor ="let data of customerData">
+        <td>{{data.RAPID_ID}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

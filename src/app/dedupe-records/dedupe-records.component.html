@@ -1,0 +1,62 @@
+<app-loading-spinner *ngIf="loder.isLoading|async"></app-loading-spinner>
+
+<div class="top ">
+<h3 class="col-md-4 col-sm-12 col-xs-12  col-lg-4">Dedupe Records:</h3>
+<div class="search col-md-6 col-sm-12 col-xs-12  col-lg-6">
+  <input type="text"  #search class=" form-control" [(ngModel)]="filtername" placeholder="search">
+  <button  class="btn btn-primary searchbtn " >search</button>
+</div>
+</div>  
+  <div class="dedupe-record">
+    <div class="container mt-5 " >
+      <div class="d-flex justify-content-center row">
+          <div class="table-responsive col-md-12 col-sm-12">
+              <div class="rounded">
+                  <div class=" table-borderless">
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                <th></th>
+                                  <th>RAPID_ID</th>
+                                  <th>CustomerName</th>
+                                  <th>BranchName</th>
+                                  <th>SchemeName</th>
+                                  <th>LoanAmount</th>
+                                  <th>CustomerType</th>
+                                  <th>MobileNumber</th>
+                                  <th>Date</th>
+                              </tr>
+                          </thead>
+                          <tbody class="table-body">
+                              <tr class="cell-1" *ngFor="let data of dedupedata | dedupefilter:filtername; let i= index" >
+                                  <ng-container *ngIf="data.RAPID_ID">
+                                  <td class="text-center"> <span  (click)="showData(i)" class="text text-primary btn-xs">showData</span></td>
+                                  <td>{{data.RAPID_ID}}</td>
+                                  <td>{{data.CustomerName}}</td>
+                                  <td>{{data.BranchName}}</td>
+                                  <td>{{data.SchemeName}}</td>
+                                  <td>{{data.LoanAmount}}</td>
+                                  <td>{{data.CustomerType}}</td>
+                                  <td>{{data.MobileNumber}}</td>
+                                  <td>{{data.CreatedDateTime |date}}</td>
+                                  </ng-container>
+                                 
+                                  
+                                  <!-- <td class="table-elipse" data-toggle="collapse" data-target="#demo"><i class="fa fa-ellipsis-h text-black-50"></i></td> -->
+                              </tr>
+                          </tbody>
+                          
+                      </table>
+                      <!-- <div>
+                          <pagination-controls id="listing_pagination" maxSize="4" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+                      </div> -->
+                      <div class="text text-danger text-center"> {{message}}</div>
+                  </div >
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  <div>
+  </div>
+  

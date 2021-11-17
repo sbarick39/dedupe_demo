@@ -1,0 +1,39 @@
+
+<div>
+    <div>
+        <button class="btn btn-primary" (click)="back()">Back</button>
+    </div>
+    <table class=" table table-hover">
+        <thead>
+        <th>Aadhar ID</th>
+        <th>Voter ID</th>
+        <th>DL</th>
+        <th>Pan</th>
+        <th>Passport</th>
+        <th>LoanNumber</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                        <ng-container *ngFor="let documents of Details.documents; let j = index">
+                          <tr>
+                             <div *ngIf="documents.docCategory =='AAD'">
+                                <td >{{documents.custDocTitle}}</td>
+                             </div>
+                          </tr>
+                        </ng-container>
+                </td>
+                <td>
+                    <ng-container *ngFor="let documents of Details.documents; let j = index">
+                      <tr>
+                          <div *ngIf="documents.docCategory =='1AVTR1'">
+                            <td >{{documents.custDocTitle}}</td>
+                          </div>
+                      </tr>
+                    </ng-container>
+            </td>    
+            </tr> 
+        </tbody>
+    </table>
+</div>
+<!-- <td ng-if="data.type == 'hootsslllll' "></td> -->

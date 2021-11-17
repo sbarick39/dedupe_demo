@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+/* Table CSS */
+
+mat-cell, mat-header-cell, mat-footer-cell {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow: initial;
+    word-wrap: break-word;
+    min-height: 20%;
+    min-width: 8%;
+    width: auto;
+    padding: 10px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    overflow-x: auto;
+}
+.search{
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+    padding-left: 200px;
+}
+.top{
+    align-items: center;
+	display: flex;
+	flex-direction: row;
+   
+}
+
+ .searchbtn{
+    margin-left: 10px;
+}
+//dedupe table
+@import "https://fonts.googleapis.com/css?family=Assistant";
+body {
+	background: #eee;
+	font-family: Assistant, sans-serif;
+}
+.cell-1 {
+	border-collapse: separate;
+	border-spacing: 0 4em;
+	background: #ffffff;
+	border-bottom: 5px solid transparent;
+	background-clip: padding-box;
+	cursor: pointer;
+}
+thead {
+	background: #dddcdc;
+}
+.table-elipse {
+	cursor: pointer;
+}
+#demo {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s 0.1s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.row-child {
+	background-color: #000;
+	color: #fff;
+}
+.lastbtn{
+	display: flex;
+    right: 20px;
+	align-items: center;
+	justify-content: center;
+}
+.message{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+// .dedupe-record{
+// 	width: 100vw;
+// 	height: 100vh;
+// }
+// @media(max-width:1200px){
+// 	.dedupe-record{
+// 		width: 100vw;
+// 		height: 100vh;
+// 	}
+// }
